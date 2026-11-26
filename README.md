@@ -1,4 +1,5 @@
 # OwnDocs — Notes & Task Manager
+# 김지원입니다
 
 A polished, frontend-only productivity app built with **React** and **Tailwind CSS** — notes and tasks in one clean, animated, local-first interface. No backend, no signup — everything lives in your browser.
 
