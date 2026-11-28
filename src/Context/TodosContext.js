@@ -4,7 +4,8 @@ export const TodoContext = createContext({
     todos: [
         {
             id: 1,
-            text: 'First Todo.',
+            title: 'First Todo.',
+            content:'This is the content for first todo.',
             isCompleted: false,
             isPinned: false,
             isDeleted: false,

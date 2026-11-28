@@ -36,8 +36,14 @@ function TodosApp() {
 
     // Load saved notes
     useEffect(() => {
-        const todos = JSON.parse(localStorage.getItem('myTasks'));
-        if (todos && todos.length > 0) setTodos(todos);
+        const saved = JSON.parse(localStorage.getItem('myTasks'));
+        if (saved && saved.length > 0){
+            setTodos(saved.map(({text, ...todo})=>({
+                ...todo,
+                title: todo.title ?? text ?? '',
+                content: todo.content ?? '',
+            })));
+        }
     }, []);
 
     // Save notes to local storage
@@ -75,7 +81,7 @@ function TodosApp() {
     };
 
     const toggleComplete = (id) => {
-        setTodos(prevTodos => prevTodos.map(todo => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted, completedAt: new Date().toISOString() } : todo));
+        setTodos(prevTodos => prevTodos.map(todo => todo.id === id ? { ...todo, isCompleted: !todo.isCompleted, completedAt: !todo.isCompleted ? new Date().toISOString():null, } : todo));
     }
 
     const permanentDelTodo = (id) => {

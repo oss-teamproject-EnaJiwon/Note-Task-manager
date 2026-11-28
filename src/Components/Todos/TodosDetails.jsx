@@ -39,9 +39,9 @@ function TodoDetails({ todo, softDelete }) {
 
     const handleDownloadPdf = (todo) => {
         const doc = new jsPDF();
-        const content = `Title: ${todo.text}\n\nCreated At: ${todo.createdAt}\nLast Updated: ${todo.lastUpdateAt}`;
-        doc.text(content, 10, 10);
-        doc.save(`${todo.text || "Untitled Task"}.pdf`);
+        const body = `Title: ${todo.title}\n\n${todo.content || ""}\n\nCreated At: ${todo.createdAt}\nLast Updated: ${todo.lastUpdateAt}`;
+        doc.text(body, 10, 10);
+        doc.save(`${todo.title || "Untitled Task"}.pdf`);
     };
 
     return (

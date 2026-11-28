@@ -125,7 +125,7 @@ function TodosCard({ todo, isRecycleBin }) {
                             : <div className="bg-blue-600 w-0.5 h-0.5 rounded-full shadow-[0px_0px_5px_2.5px_rgba(0,0,255,1)]"></div>
                         }
                         <h2 className={`font-semibold  line-clamp-1 text-md max-[550px]:text-xs text-gray-900 dark:text-gray-100 ${todo.isCompleted ? 'line-through text-gray-600 dark:text-gray-500' : ''}`}>
-                            {todo.text}
+                            {todo.title}
                         </h2>
 
                     </div>
